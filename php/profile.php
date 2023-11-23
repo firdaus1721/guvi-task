@@ -1,8 +1,5 @@
 <?php
-// Start a session
-session_start();
 
-// Use Redis as the session handler
 session_start();
 
 // Use Redis as the session handler
