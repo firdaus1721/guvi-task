@@ -1,5 +1,4 @@
 function updateProfile() {
-    console.log('update profile');
   
     var name = $('#name').val();
     var age = $('#age').val();
@@ -15,7 +14,8 @@ function updateProfile() {
   
     const profileUpdate = {
       name,
-      age,dob,
+      age,
+      dob,
       mobile,
       email,
       address,
