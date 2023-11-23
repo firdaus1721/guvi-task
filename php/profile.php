@@ -1,4 +1,16 @@
 <?php
+// Start a session
+session_start();
+
+// Use Redis as the session handler
+session_start();
+
+// Use Redis as the session handler
+ini_set('session.save_handler', 'redis');
+ini_set('session.save_path', 'tcp://127.0.0.1:6379');
+$mongoClient = new mongodp/Client("mongodb://localhost:27017");
+$db = $mongoClient->user_authentication_mongodb;
+$collection = $db->users;
 $conn = new mysqli("localhost", "root", "Unknown@123", "guvi_database");
 
 if ($conn->connect_error) {
@@ -37,4 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
+$mongoClient->close();
+
+$_SESSION['user_id'] = 123;
+$user_id = $_SESSION['user_id'];
+
+
 ?>
